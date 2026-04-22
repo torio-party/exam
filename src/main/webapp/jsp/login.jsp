@@ -2,10 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>得点管理システム</title>
-</head>
+<jsp:include page="/jsp/base/header.jsp" />
 <body>
 <h2>ログイン画面</h2>
 <p>${requestScope.loginError}</p>
@@ -15,5 +12,6 @@ ID<input type="text" name="id" required><br>
 <label><input type="checkbox" name="chk_d_ps">パスワードを表示</label><br>
 <input type="submit" name="login" value="ログイン"></input>
 </form>
+<jsp:include page="/jsp/base/footer.jsp" />
 </body>
 </html>

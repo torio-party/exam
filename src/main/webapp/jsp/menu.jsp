@@ -2,12 +2,11 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
+<jsp:include page="/jsp/base/header.jsp" />
 <body>
 <h1>メニュー画面</h1>
 <p>${sessionScope.loginUser.id}</p>
+<a href="${pageContext.request.contextPath}/LogoutAction.action">ログアウト</a>
+<jsp:include page="/jsp/base/footer.jsp" />
 </body>
 </html>

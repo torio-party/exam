@@ -10,6 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import scoremanager.LoginAction;
 import scoremanager.LoginExecuteAction;
+import scoremanager.LogoutAction;
 @WebServlet("*.action")
 public class FrontController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) {
@@ -31,6 +32,10 @@ public class FrontController extends HttpServlet {
 	        if("LoginExecuteAction".equals(name)) {
 	        	LoginExecuteAction loginExecuteAction = new LoginExecuteAction();
 	        	loginExecuteAction.execute(req, res);
+	        }
+	        if("LogoutAction".equals(name)) {
+	        	LogoutAction logoutAction = new LogoutAction();
+	        	logoutAction.execute(req, res);
 	        }
         }catch (Exception e) {
         	try {
