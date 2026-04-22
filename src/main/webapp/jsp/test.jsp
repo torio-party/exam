@@ -4,10 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>test</title>
 </head>
 <body>
-<h1>メニュー画面</h1>
-<p>${sessionScope.loginUser.id}</p>
+<a href="../LoginAction.action">ログイン</a>
 </body>
 </html>

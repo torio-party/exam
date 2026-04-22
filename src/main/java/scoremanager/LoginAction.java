@@ -1,5 +1,10 @@
 package scoremanager;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
-public class LoginAction {
-	
+import tool.Action;
+public class LoginAction extends Action {
+	public void execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
+		req.getRequestDispatcher("/jsp/login.jsp").forward(req, res);
+	}
 }

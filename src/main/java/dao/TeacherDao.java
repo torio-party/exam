@@ -9,7 +9,7 @@ import bean.Teacher;
 public class TeacherDao extends Dao {
 	public Teacher get(String id) throws Exception {
 		Connection con = getConnection();
-		String sql = "SELECT * FROM teacher WHERE cd = ?";
+		String sql = "SELECT * FROM teacher WHERE id = ?";
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setString(1, id);
 		ResultSet rs = ps.executeQuery();
@@ -22,4 +22,21 @@ public class TeacherDao extends Dao {
 		}
 		return teacher;
 	}
+	
+	public Teacher login(String id, String password) throws Exception {
+		Connection con = getConnection();
+		String sql = "SELECT * FROM teacher WHERE id = ? AND password = ?";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setString(1, id);
+		ps.setString(2, password);
+		ResultSet rs = ps.executeQuery();
+		Teacher teacher = null;
+		if(rs.next()) {
+			teacher = new Teacher();
+			teacher.setId(rs.getString("id"));
+			teacher.setPassword(rs.getString("password"));
+		}
+		return teacher;
+	}
 }
+

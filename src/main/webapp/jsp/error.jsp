@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>メニュー画面</h1>
-<p>${sessionScope.loginUser.id}</p>
+<p>エラーページ</p>
 </body>
 </html>

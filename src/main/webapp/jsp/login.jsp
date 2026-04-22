@@ -4,9 +4,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>得点管理システム</title>
 </head>
 <body>
-<h1>ログイン画面</h1>
+<h2>ログイン画面</h2>
+<p>${requestScope.loginError}</p>
+<form action="${pageContext.request.contextPath}/LoginExecuteAction.action" method="post">
+ID<input type="text" name="id" required><br>
+パスワード<input type="text" name="password" required><br>
+<label><input type="checkbox" name="chk_d_ps">パスワードを表示</label><br>
+<input type="submit" name="login" value="ログイン"></input>
+</form>
 </body>
 </html>
